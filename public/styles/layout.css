@@ -94,9 +94,22 @@ article.tweet header {
   padding: 2%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: row;
   color: #5a5a59;
+}
+
+article.tweet header div {
+  flex: 1;
+  padding-left: 10px;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+article.tweet header div span {
+
 }
 
 article.tweet p {
