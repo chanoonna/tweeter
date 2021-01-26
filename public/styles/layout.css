@@ -16,10 +16,77 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #ecf4f3;
+  font-family: Source Sans Pro;
   font-size: 24px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+section.new-tweet {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+section.new-tweet form {
+  display: flex;
+  flex-direction: column;
+}
+
+section.new-tweet textarea {
+  border: none;
+  margin: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 3px solid  #545149;
+  vertical-align: bottom;
+  resize: none;
+}
+
+section.new-tweet textarea:focus {
+  outline: none;
+}
+
+section.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  font-family: Bungee;
+}
+
+section.new-tweet button {
+  border: none;
+  background-color: #4056A1;
+  color: white;
+}
+
+.tweet {
+  border: 3px solid #545149;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tweet p {
+  border-bottom: 3px solid #545149;
+  margin-bottom: auto;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+}
+.date-icons {
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  justify-content: space-between;
+}
