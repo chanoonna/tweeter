@@ -15,6 +15,7 @@ html {
  */
 
 body {
+  margin-top: 120px;
   color: #545149;
   background-color: #ecf4f3;
   font-family: Source Sans Pro;
@@ -33,7 +34,7 @@ main {
 }
 
 section.new-tweet {
-  margin: 5px;
+  margin: 25px 10px 25px 10px;
   display: flex;
   flex-direction: column;
 }
@@ -46,6 +47,7 @@ section.new-tweet form {
 section.new-tweet textarea {
   border: none;
   margin: 5px;
+  margin-top: 50px;
   padding-bottom: 5px;
   background-color: rgba(0, 0, 0, 0);
   border-bottom: 3px solid  #545149;
@@ -74,24 +76,40 @@ section.new-tweet button {
   color: red;
 }
 
-.tweet {
-  border: 3px solid #545149;
+article.tweet {
+  border: 3px solid #5a5a59;
   padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-.tweet p {
-  border-bottom: 3px solid #545149;
-  margin-bottom: auto;
+  opacity: .7;
 }
 
-.name {
+article.tweet:hover {
+  opacity: 1;
+}
+
+article.tweet header {
+  background-color: transparent;
+  background-image: none;
+  padding: 2%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  color: #5a5a59;
 }
-.date-icons {
+
+article.tweet p {
+  border-bottom: 3px solid #5a5a59;
+  margin-bottom: auto;
+  padding: 2%;
+}
+
+article.tweet footer {
+  margin: 1.5%;
   display: flex;
   padding-left: 5px;
   padding-right: 5px;
   justify-content: space-between;
+  font-size: 15px;
 }
