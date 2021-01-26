@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#tweet-text').on('keydown', function() {
+  $('#tweet-text').on('keydown keyup', function() {
     if (this.value.length > 140) {
       $(this).parent().find('.counter').addClass('counter-red');
     } else {
