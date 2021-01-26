@@ -46,6 +46,7 @@ section.new-tweet form {
 section.new-tweet textarea {
   border: none;
   margin: 5px;
+  padding-bottom: 5px;
   background-color: rgba(0, 0, 0, 0);
   border-bottom: 3px solid  #545149;
   vertical-align: bottom;
@@ -67,6 +68,10 @@ section.new-tweet button {
   border: none;
   background-color: #4056A1;
   color: white;
+}
+
+.counter.counter-red {
+  color: red;
 }
 
 .tweet {
