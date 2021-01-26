@@ -1,5 +1,5 @@
 header {
-  background-color: rgb(225, 195, 255);
+  background-color: rgba(225, 195, 255, 0.5);
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   width: 100%;
