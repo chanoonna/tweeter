@@ -28,7 +28,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div><p><b>Write</b> a new tweet</p><i class="fas fa-angle-double-down tweet-arrow"></i></div>
+      <div class="new-tweet-show" tabindex="1"><p><b>Write</b> a new tweet</p><i class="fas fa-angle-double-down tweet-arrow"></i></div>
     </nav>
 
     <header>
@@ -43,9 +43,11 @@
     <main class="container">
       <section class="new-tweet">
         <form method="POST" action="/tweets">
+          <!-- oninput counts the number of characters typed and sends the length to output. -->
           <textarea name="text" id="tweet-text" rows="2" oninput="counter.value = 140 - this.value.length" placeholder="What are you humming about?"></textarea>
           <div>
             <button type="submit">Tweet</button>
+            <span></span>
             <output name="counter" type="numver" min="0" max="140" value="0" class="counter" for="tweet-text">140</output>
           </div>
         </form>
