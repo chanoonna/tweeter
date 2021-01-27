@@ -20,6 +20,7 @@ body {
   background-color: #ecf4f3;
   font-family: Source Sans Pro;
   font-size: 24px;
+  position: relative;
 }
 
 /*
@@ -28,9 +29,19 @@ body {
 
 main {
   width: 90%;
+  left: 5%;
+  top: 195px;
   margin: auto;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  z-index: -1;
+  transition-property: top;
+	transition-duration: .5s;
+}
+
+main.clicked {
+  top: 400px;
 }
 
 section.new-tweet {
@@ -72,8 +83,19 @@ section.new-tweet button {
   color: white;
 }
 
+section.new-tweet span {
+  font-family: Source Sans Pro;
+  font-weight: 700;
+  font-size: 15px;
+  color: red;
+}
+
 .counter.counter-red {
   color: red;
+}
+
+.button-function:disabled{
+  background-color: #c1cef8
 }
 
 article.tweet {
@@ -81,7 +103,7 @@ article.tweet {
   padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
-  opacity: .7;
+  opacity: 0.6;
 }
 
 article.tweet:hover {
@@ -106,10 +128,6 @@ article.tweet header div {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-}
-
-article.tweet header div span {
-
 }
 
 article.tweet p {
