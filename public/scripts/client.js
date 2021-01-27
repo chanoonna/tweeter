@@ -71,6 +71,9 @@ $(document).ready(function() {
 
     $.post("/tweets", $($form).serialize(), function() {
       $tweet.val('');
+      $('.counter').html('140');
+      $('main').removeClass('clicked');
+
       $.ajax('/tweets', { method: 'GET' })
         .then(function(data) {
           $('#tweets-container').html(renderTweets(data));
@@ -83,9 +86,10 @@ $(document).ready(function() {
   $('.new-tweet-show').on('click', function() {
     if ($('main').hasClass('clicked')) {
       $('main').removeClass('clicked');
-    } else {
-      $('main').addClass('clicked');
-      document.getElementsByClassName('new-tweet')[0].scrollIntoView({ behavior: "smooth" });
+      
+      return;
     }
+
+    $('main').addClass('clicked');
   });
 });
