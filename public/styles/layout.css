@@ -15,39 +15,36 @@ html {
  */
 
 body {
-  margin-top: 120px;
+  width: 100%;
+  min-width: 320px;
   color: #545149;
   background-color: #ecf4f3;
   font-family: Source Sans Pro;
   font-size: 24px;
-  position: relative;
+}
+
+.hidden-area {
+  height: 200px;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-main {
-  width: 90%;
-  left: 5%;
-  top: 195px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  z-index: -1;
-  transition-property: top;
-	transition-duration: .5s;
-}
-
-main.clicked {
-  top: 400px;
-}
-
 section.new-tweet {
-  margin: 25px 10px 25px 10px;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+section.new-tweet.clicked {
+  overflow: hidden;
+  height: auto;
+  max-height: 200px;
+  transition: max-height 0.3s ease-out;
 }
 
 section.new-tweet form {
@@ -57,12 +54,8 @@ section.new-tweet form {
 
 section.new-tweet textarea {
   border: none;
-  margin: 5px;
-  margin-top: 50px;
-  padding-bottom: 5px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   border-bottom: 3px solid  #545149;
-  vertical-align: bottom;
   resize: none;
 }
 
@@ -71,14 +64,15 @@ section.new-tweet textarea:focus {
 }
 
 section.new-tweet div {
+  margin: 1% 1% 5% 0;
   display: flex;
   justify-content: space-between;
-  padding: 3px;
   font-family: Bungee;
 }
 
 section.new-tweet button {
   border: none;
+  outline: none;
   background-color: #4056A1;
   color: white;
 }
@@ -99,10 +93,8 @@ section.new-tweet span {
 }
 
 article.tweet {
+  margin: 0 0 5% 0;
   border: 3px solid #5a5a59;
-  padding: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   opacity: 0.6;
 }
 
@@ -111,36 +103,92 @@ article.tweet:hover {
 }
 
 article.tweet header {
-  background-color: transparent;
-  background-image: none;
-  padding: 2%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
+  justify-content: space-between;
   color: #5a5a59;
 }
 
 article.tweet header div {
   flex: 1;
-  padding-left: 10px;
   height: 55px;
+  padding: 0 2% 0 2%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
 article.tweet p {
+  padding: 0 2% 2% 2%;
   border-bottom: 3px solid #5a5a59;
   margin-bottom: auto;
-  padding: 2%;
 }
 
 article.tweet footer {
-  margin: 1.5%;
+  padding: 2% 2% 2% 2%;
   display: flex;
-  padding-left: 5px;
-  padding-right: 5px;
   justify-content: space-between;
   font-size: 15px;
+}
+
+.fab.fa-font-awesome-flag.xs:hover {
+  color: blue;
+}
+
+.fas.fa-retweet.xs:hover {
+  color: blue;
+}
+
+.fas.fa-heart.xs:hover {
+  color: red;
+}
+
+@media only screen and (max-width: 767px) {
+  .hidden-area {
+    display: none;
+  }
+
+  section {
+    margin: 2.5% 2.5% 0 2.5%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .hidden-area {
+    height: 120px;
+  }
+  section {
+    margin: 2.5% 5% 0 5%;
+  }
+  
+  body {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  main {
+    width: 70%;
+  }
+
+  footer {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  main {
+    width: 55%;
+  }
+
+  footer {
+    width: 100%;
+  }
 }

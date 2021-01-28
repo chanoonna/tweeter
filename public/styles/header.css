@@ -1,4 +1,4 @@
-header {
+header#page-header {
   background-color: #ff7efb;
   background-image: url('/images/batthern.png');
   width: 100%;
@@ -10,7 +10,53 @@ header {
   color: white;
 }
 
-header span {
+header#page-header span {
   font-family: Source Sans Pro;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 767px) {
+  header#page-header {
+    height: 100%;
+    flex-direction: row;
+    min-width: 265px;
+  }
+
+  header#page-header div {
+    width: 50%;
+    font-size: 0.8em;
+    min-width: 150px;
+    text-align: center;
+  }
+
+  header#page-header #profile-pic {
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  header#page-header {
+    background-color: transparent;
+    background-image: none;
+    width: 20%;
+  }
+
+  header#page-header div {
+    width: 50%;
+    font-size: 1em;
+    min-width: 150px;
+    text-align: center;
+    color: black;
+  }
+
+  header#page-header img {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header#page-header {
+    width: 30%;
+  }
 }

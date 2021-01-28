@@ -1,4 +1,4 @@
-footer i {
+footer#page-footer i {
   position: fixed;
   bottom: 5%;
   right: 5%;
@@ -6,6 +6,6 @@ footer i {
   color: red;
 }
 
-footer i.hide {
+footer#page-footer i.hide {
   display: none;
 }
