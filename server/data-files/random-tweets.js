@@ -24,7 +24,7 @@ const sseTest = [
   {
     "user": {
       "name": "Tony",
-      "avatars": "https://i.imgur.com/z5LNkkB.png",
+      "avatars": "https://i.imgur.com/ilT4JDe.png",
       "handle": "@IHATEDIAMONDS"
     },
     "content": {
@@ -50,7 +50,7 @@ const sseTest = [
       "handle": "@Ipretty"
     },
     "content": {
-      "text": "@IHATEDIAMONDS @IHATEDIAMONDS Both of you stop it! Tony, I am a way out of your league! And Rico, you have a wife!"
+      "text": "@IHATEDIAMONDS @ILOVEDIAMONDS Both of you stop it! Tony, I am a way out of your league! And Rico, you have a wife!"
     },
     "created_at": 0
   },
@@ -58,7 +58,7 @@ const sseTest = [
     "user": {
       "name": "Cpt. Soolly",
       "avatars": "https://i.imgur.com/ilT4JDe.png",
-      "handle": "@H3R0"
+      "handle": "@H3R0ofHudson"
     },
     "content": {
       "text": "Yes! Birds! ... I mean, don't come to us."
@@ -106,6 +106,94 @@ const sseTest = [
     },
     "content": {
       "text": "@FreeFalk I know that CSS is hell."
+    },
+    "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Thrall",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@sonofdurotan"
+    },
+    "content": {
+      "text": "Lok'tar."
+    },
+    "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Cooper",
+      "avatars": "https://i.imgur.com/5fUVPRP.png",
+      "handle": "@destiny"
+    },
+    "content": {
+      "text": "We will find a way. We always have."
+    },
+    "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Hugh Mann",
+      "avatars": "https://i.imgur.com/DVpDmdR.png",
+      "handle": "@ivebeentomars"
+    },
+    "content": {
+      "text": "@destiny So you are coming for me, right? Please, hurry. I'm freezing."
+    },
+    "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Cooper",
+      "avatars": "https://i.imgur.com/5fUVPRP.png",
+      "handle": "@destiny"
+    },
+    "content": {
+      "text": "@ivebeentomars Yes. but until then, why don't you grow some potatoes?"
+    },
+    "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Hugh Mann",
+      "avatars": "https://i.imgur.com/DVpDmdR.png",
+      "handle": "@ivebeentomars"
+    },
+    "content": {
+      "text": "@destiny I'm tired of potatoes. And space too. Just wanna go home."
+    },
+    "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Amelia Brand",
+      "avatars": "https://i.imgur.com/v0JXau2.png",
+      "handle": "@earhartiscool"
+    },
+    "content": {
+      "text": "@destiny Um, hello? You are supposed to come for me first?"
+    },
+    "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Cooper",
+      "avatars": "https://i.imgur.com/5fUVPRP.png",
+      "handle": "@destiny"
+    },
+    "content": {
+      "text": "@earhartiscool Wait, how did you go there already? We haven't even embarked on a journey."
+    },
+    "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Luke Skywalker",
+      "avatars": "https://i.imgur.com/5fUVPRP.png",
+      "handle": "@cooljedi"
+    },
+    "content": {
+      "text": "My father is Darth Vader...My father is Darth Vader...My father is Darth Vader...My father is Darth Vader...My father is Darth Vader...My fa"
     },
     "created_at": 0
   }
