@@ -5,6 +5,13 @@ This project is a part of bootcamp course which is focused on both front-end and
 
 _**(BEWARE)**_ Even though it seems there is live tweet coming in, they are all fake and not real. It is only to practice with Server sent events.
 
+!["Desktop view"](https://github.com/chanoonna/tweeter/blob/master/docs/tweeter1.png)
+!["Tablet view"](https://github.com/chanoonna/tweeter/blob/master/docs/tweeter2.png)
+!["Mobile phone view"](https://github.com/chanoonna/tweeter/blob/master/docs/tweeter3.png)
+!["Disabled submit button when length exceeds 140"](https://github.com/chanoonna/tweeter/blob/master/docs/tweeter4.png)
+!["When there is no input, it doesn't post"](https://github.com/chanoonna/tweeter/blob/master/docs/tweeter5.png)
+
+
 ## Dependencies
 
 - node.js 14.15.x or above
