@@ -5,6 +5,7 @@
  */
 
 // escapte function to stringify tweet content which can cause html tag malfunction.
+
 const escape = function(text) {
   const escaped = document.createElement('div');
   escaped.appendChild(document.createTextNode(text));
@@ -24,7 +25,7 @@ const createTweetElement = function(data) {
       </header>
       <p>${escape(data.content.text)}</p>
       <footer>
-        <div>${new Date(data.created_at).toLocaleString()}</div>
+        <div>${timeago.format(data.created_at)}</div>
         <div>
           <i class="fab fa-font-awesome-flag xs"></i>
           <i class="fas fa-retweet xs"></i>
@@ -38,16 +39,14 @@ const createTweetElement = function(data) {
 const renderTweets = function(data) {
   let html = '';
 
-  data.forEach(tweet => {
+  const sorted = data.sort((a, b) => a.created_at > b.created_at ? -1 : 1);
+
+  sorted.forEach(tweet => {
     html += createTweetElement(tweet);
   });
 
   return html;
 };
-
-// const loadtweets = function() {
-
-// };
 
 $(document).ready(function() {
   const $form = $('.new-tweet').children('form');
@@ -104,4 +103,18 @@ $(document).ready(function() {
     .then(function(data) {
       $('#tweets-container').html(renderTweets(data));
     });
+});
+
+let counter = 0;
+
+$(document).ready(function() {
+  const source = new EventSource('/sse/tweets');
+
+  source.addEventListener('message', event => {
+    $('#tweets-container').html(renderTweets(JSON.parse(event.data)));
+    counter += 1;
+  });
+  source.removeEventListener('end', () => {
+    console.log('Lost connection');
+  });
 });

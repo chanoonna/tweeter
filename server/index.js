@@ -6,6 +6,7 @@ const PORT          = 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
+const sseTest       = require('./data-files/random-tweets');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -31,6 +32,28 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
 // Mount the tweets routes at the "/tweets" path prefix:
 app.use("/tweets", tweetsRoutes);
+
+app.get('/sse/tweets', async function(req, res) {
+  res.set({
+    'Cache-Control': 'no-cache',
+    'Content-Type': 'text/event-stream',
+    'Connection': 'keep-alive'
+  });
+  res.flushHeaders();
+
+  let count = 0;
+
+  while (count < sseTest.length) {
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    const tweet = sseTest[count];
+    tweet.created_at = Date.now();
+    db.tweets.push(tweet);
+
+    res.write(`data: ${JSON.stringify(db.tweets)}\n\n`);
+    count += 1;
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
