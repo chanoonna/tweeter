@@ -25,7 +25,11 @@ const createTweetElement = function(data) {
       <p>${escape(data.content.text)}</p>
       <footer>
         <div>${new Date(data.created_at).toLocaleString()}</div>
-        <div>Icons</div>
+        <div>
+          <i class="fab fa-font-awesome-flag xs"></i>
+          <i class="fas fa-retweet xs"></i>
+          <i class="fas fa-heart xs"></i>
+        </div>
       </footer>
     </article>
   `;
@@ -84,12 +88,20 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $('.new-tweet-show').on('click', function() {
-    if ($('main').hasClass('clicked')) {
-      $('main').removeClass('clicked');
+    if ($('.new-tweet').hasClass('clicked')) {
+      $('.new-tweet').removeClass('clicked');
       
       return;
     }
 
-    $('main').addClass('clicked');
+    $('.new-tweet').addClass('clicked');
+    document.getElementById('tweet-text').focus();
   });
+});
+
+$(document).ready(function() {
+  $.ajax('/tweets', { method: 'GET' })
+    .then(function(data) {
+      $('#tweets-container').html(renderTweets(data));
+    });
 });
