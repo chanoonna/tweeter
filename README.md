@@ -1,8 +1,20 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and SASS.
+This project is a part of bootcamp course which is focused on both front-end and back-end.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+_**(BEWARE)**_ Even though it seems there is live tweet coming in, they are all fake and not real. It is only to practice with Server sent events.
+
+## Dependencies
+
+- node.js 14.15.x or above
+- express
+- body-parser
+- chance
+- jquery
+- md5
+- node-sass-middleware
+- timeago
 
 ## Getting Started
 
@@ -11,7 +23,21 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
-## Dependencies
+## Features
 
-- Express
-- Node 5.10.x or above
+- Single-page design.
+- Tweet reload using AJAX.
+- Listens to Server sent new tweeter feed.
+- Preponse to 3 major display devices: desktops, tablets and mobile phones.
+
+## Known bugs
+
+- Tweets get duplicated on rare occasions.
+- App tries to listen to the server even when the connection is lost.
+
+## Features in mind
+
+- Server sending only new tweets to client instead of sending the whole database.
+- Sign in, log in and log out feature with sessions.
+- Retweeting
+- Setting up a real database.
