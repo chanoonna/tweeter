@@ -5,7 +5,6 @@
  */
 
 // escapte function to stringify tweet content which can cause html tag malfunction.
-
 const escape = function(text) {
   const escaped = document.createElement('div');
   escaped.appendChild(document.createTextNode(text));
@@ -39,6 +38,7 @@ const createTweetElement = function(data) {
 const renderTweets = function(data) {
   let html = '';
 
+  // The most recent tweets first.
   const sorted = data.sort((a, b) => a.created_at > b.created_at ? -1 : 1);
 
   sorted.forEach(tweet => {
@@ -60,7 +60,7 @@ $(document).ready(function() {
     const content = $tweet.val().trim();
     const errorMessageTarget = $('.new-tweet').find('span');
 
-    // Prevents submitting from 0 length and length over 140 contents.
+    // Prevents submitting from 0 length or length over 140 contents.
     if (content.length === 0) {
       errorMessageTarget.html('No content');
       setTimeout(() => $('.new-tweet').find('span').html(''), 2000);
@@ -73,9 +73,13 @@ $(document).ready(function() {
     }
 
     $.post("/tweets", $($form).serialize(), function() {
+
+      // Once it is submitted, clear out the textarea and reset the character length value displayed to 140.
       $tweet.val('');
       $('.counter').html('140');
-      $('main').removeClass('clicked');
+
+      // Comment it out if you want the box don't disappear after submitting a tweet.
+      $('.new-tweet').removeClass('clicked');
 
       $.ajax('/tweets', { method: 'GET' })
         .then(function(data) {
@@ -105,16 +109,11 @@ $(document).ready(function() {
     });
 });
 
-let counter = 0;
-
+// REQUIRED: removeEventListener when the connection to the server is lost
 $(document).ready(function() {
   const source = new EventSource('/sse/tweets');
 
   source.addEventListener('message', event => {
     $('#tweets-container').html(renderTweets(JSON.parse(event.data)));
-    counter += 1;
-  });
-  source.removeEventListener('end', () => {
-    console.log('Lost connection');
   });
 });
