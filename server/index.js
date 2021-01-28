@@ -44,7 +44,8 @@ app.get('/sse/tweets', async function(req, res) {
   let count = 0;
 
   while (count < sseTest.length) {
-    await new Promise(resolve => setTimeout(resolve, 10000));
+    await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 21 + 10) * 1000));
+
     const tweet = sseTest[count];
     tweet.created_at = Date.now();
     db.tweets.push(tweet);

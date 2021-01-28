@@ -86,6 +86,28 @@ const sseTest = [
       "text": "Tweeter is a waste of time."
     },
     "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Ygritte",
+      "avatars": "https://i.imgur.com/v0JXau2.png",
+      "handle": "@FreeFalk"
+    },
+    "content": {
+      "text": "@iamstark You know nothing Jon Snow."
+    },
+    "created_at": 0
+  },
+  {
+    "user": {
+      "name": "Jon Snow",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@iamstark"
+    },
+    "content": {
+      "text": "@FreeFalk I know that CSS is hell."
+    },
+    "created_at": 0
   }
 ];
 
