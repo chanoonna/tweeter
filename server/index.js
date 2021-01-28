@@ -2,14 +2,25 @@
 
 // Basic express setup:
 
-const PORT          = 8080;
-const express       = require("express");
-const bodyParser    = require("body-parser");
-const app           = express();
-const sseTest       = require('./data-files/random-tweets');
+const PORT           = 8080;
+const express        = require("express");
+const bodyParser     = require("body-parser");
+const sseTest        = require('./data-files/random-tweets');
+const sassMiddleware = require('node-sass-middleware');
+
+const app            = express();
+
+
+app.use(sassMiddleware({
+    src: __dirname + '/styles',
+    dest: __dirname + '../../public/styles',
+    debug: false,
+    outputStyle: 'compressed',
+    prefix:  '/styles'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static('public'));
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
@@ -33,6 +44,8 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 // Mount the tweets routes at the "/tweets" path prefix:
 app.use("/tweets", tweetsRoutes);
 
+// This part is for a little practice for SSE.
+// It is not intended to feed a certain user directly.
 app.get('/sse/tweets', async function(req, res) {
   res.set({
     'Cache-Control': 'no-cache',
@@ -54,7 +67,6 @@ app.get('/sse/tweets', async function(req, res) {
     count += 1;
   }
 });
-
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
