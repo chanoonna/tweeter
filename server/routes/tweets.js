@@ -23,12 +23,20 @@ module.exports = function(DataHelpers) {
       return;
     }
 
-    const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
+    // const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
+
+    // There is no log in feature. Hardcoded userinfo for testing purpose.
     const tweet = {
-      user: user,
+      user: {
+        name: 'Amy Mansell',
+        handle: '@amyrocks',
+        avatars: 'https://i.imgur.com/3GvwNBf.png',
+      },
+
       content: {
         text: req.body.text
       },
+
       created_at: Date.now()
     };
 
