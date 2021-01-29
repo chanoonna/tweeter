@@ -35,7 +35,7 @@ _**(BEWARE)**_ Even though it seems there is live tweet coming in, they are all 
 - Single-page design.
 - Tweet reload using AJAX.
 - Listens to Server sent new tweeter feed.
-- Preponse to 3 major display devices: desktops, tablets and mobile phones.
+- Repond to 3 major display devices: desktops, tablets and mobile phones.
 
 ## Known bugs
 
